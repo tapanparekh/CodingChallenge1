@@ -2,3 +2,14 @@
     width:20rem;
     margin:20px 0 24px 0
 }
+
+.img-wrap{
+    margin-top: 1em;
+    height: 100px;
+    text-align: center;
+}
+
+.img-size{
+    height: 100%;
+    width: auto;
+}
