@@ -1,0 +1,3 @@
+{{product.name}}
+<button (click)="addToCartProduct()" *ngIf="!product.addedToCart">Add to cart</button>
+<button (click)="removeFromCartProduct()" *ngIf="product.addedToCart">Remove from cart</button>
