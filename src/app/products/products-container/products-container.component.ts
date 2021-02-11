@@ -12,11 +12,14 @@ export class ProductsContainerComponent implements OnInit {
   public productList: Product[];
   /** Veriable for cart list */
   public cartList: Product[];
+  /** Variable for available gold */
+  public availableGold: number;
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.productList = this.productService.getAllProducts();
     this.cartList = this.productService.getCartList();
+    this.availableGold = this.productService.getAvailableGold();
   }
 
   /** This method is used to edit cart */

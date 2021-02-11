@@ -1,9 +1,30 @@
+<br>
+<h2>Added to cart:</h2>
 <div>
-    <ul *ngIf="cartProductList.length>0">
-        <li *ngFor="let item of cartProductList">
-            {{item.name}}
-            <button (click)="removeFromCartProduct(item)" class="btn btn-primary" *ngIf="item.addedToCart">x</button>
-        </li>
-    </ul>
-    <span *ngIf="cartProductList.length===0">Cart is empty.</span>
+    <table class="table table-borderless border border-dark">
+        <tbody *ngIf="cartProductList.length>0">
+            <tr *ngFor="let item of cartProductList">
+                <td>{{item.name}}</td>
+                <td>{{item.price}} <span class="font-weight-bold" title="Remove" style="cursor: pointer;" (click)="removeFromCartProduct(item)">X</span>
+                </td>
+            </tr>
+            <tr class="font-weight-bold border border-dark" >
+                <td>Total:</td>
+                <td>{{total}}</td>
+            </tr>
+        </tbody>
+        <tbody *ngIf="cartProductList.length===0">
+            <tr>
+                <td>
+                    <span>Cart is empty.</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <button *ngIf="cartProductList.length>0" class="btn btn-primary" (click)="checkOut()"
+            [ngClass]="{'btn':true, 'btn-primary':!amountCheck(), 'btn-danger':amountCheck()}"
+            [disabled]="amountCheck()">Check out</button>
+        <span *ngIf="amountCheck()">You dont have enough gold!</span>
+    </div>
 </div>

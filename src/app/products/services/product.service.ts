@@ -3,8 +3,8 @@ import { Cart, Product } from '../product.model';
 
 @Injectable()
 export class ProductService {
-
-  public items: Product[] = [
+  /**List of product */
+  private items: Product[] = [
     {
       id: 1,
       name: 'Kokorowatari',
@@ -67,7 +67,8 @@ export class ProductService {
       The Dragon Slayer is the massive sword Guts has wielded as his signature weapon since surviving the Eclipse.`
     },
   ];
-
+  /** Available gold */
+  private availableGold: number = 1000;
   constructor() { }
 
   /** This function returns all products */
@@ -80,12 +81,17 @@ export class ProductService {
     return this.items.filter(p => p.addedToCart);
   }
 
-  /** Thismethod is used to edit cart */
+  /** This method is used to edit cart */
   public editCart(product: Product): void {
     this.items.forEach(item => {
       if (item.id === product.id) {
         item.addedToCart = product.addedToCart;
       }
     })
+  }
+
+  /** Get available gold */
+  public getAvailableGold(): number {
+    return this.availableGold;
   }
 }

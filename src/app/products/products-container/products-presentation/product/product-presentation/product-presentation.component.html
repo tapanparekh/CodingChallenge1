@@ -1,13 +1,15 @@
 <div class="card card-size">
-    <div class="card-header">
+    <div class="card-header bg-white border-bottom-0">
         <h4 class="card-title">{{product.name}}</h4>
-        <h6 class="card-title"> Price : {{product.price}}</h6>
+        <h6 class="card-sub-title"> Price : {{product.price}}</h6>
     </div>
     <div class="img-wrap">
         <img class="card-img-top img-size" src="{{product.image}}" alt="image">
     </div>
     <div class="card-body">
         <p class="card-text prod-des">{{product.desc}}</p>
+    </div>
+    <div class="card-action text-right p-3">
         <button (click)="addToCartProduct()" class="btn btn-primary" *ngIf="!product.addedToCart">Add to cart</button>
         <button (click)="removeFromCartProduct()" class="btn btn-primary" *ngIf="product.addedToCart">Remove from
             cart</button>

@@ -10,8 +10,10 @@ export class ProductsPresentationComponent implements OnInit {
 
   /** Input property for product */
   @Input() public productList: Product[];
-  /** Input property for listof product added in cart */
+  /** Input property for list of product added in cart */
   @Input() public cartList: Product[];
+  /** Input property for available gold */
+  @Input() public availableGold: number;
   /** Event emmitor to edit product */
   @Output() public editProduct: EventEmitter<Product>;
   constructor() {
