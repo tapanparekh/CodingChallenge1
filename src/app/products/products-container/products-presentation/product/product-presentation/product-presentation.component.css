@@ -1,6 +1,7 @@
 .card-size {
     width:20rem;
-    margin:20px 0 24px 0
+    margin:20px 20px 20px 0;
+    height: 30rem;
 }
 
 .img-wrap{
@@ -12,4 +13,8 @@
 .img-size{
     height: 100%;
     width: auto;
+}
+
+.prod-des{
+    font-size: 14px;
 }

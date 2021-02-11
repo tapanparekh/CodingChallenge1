@@ -4,3 +4,6 @@
         </app-product-presentation>
     </div>
 </div>
+<div>
+    <app-cart-presentation [cartProductList]="cartList" (updateCart)="updateCart($event)"></app-cart-presentation>
+</div>

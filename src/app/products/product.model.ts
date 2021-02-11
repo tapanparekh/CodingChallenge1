@@ -6,3 +6,8 @@ export interface Product {
     addedToCart: boolean;
     desc: string;
 }
+
+export interface Cart {
+    id: number;
+    name: string;
+}

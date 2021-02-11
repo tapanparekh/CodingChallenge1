@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../product.model';
+import { Cart, Product } from '../product.model';
 
 @Injectable()
 export class ProductService {
@@ -73,6 +73,11 @@ export class ProductService {
   /** This function returns all products */
   public getAllProducts(): Product[] {
     return this.items;
+  }
+
+  /** Get list of product added in cart */
+  public getCartList(): Product[] {
+    return this.items.filter(p => p.addedToCart);
   }
 
   /** Thismethod is used to edit cart */

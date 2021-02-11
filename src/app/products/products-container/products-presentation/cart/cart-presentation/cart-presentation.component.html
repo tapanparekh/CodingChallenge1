@@ -1,1 +1,9 @@
-<p>cart-presentation works!</p>
+<div>
+    <ul *ngIf="cartProductList.length>0">
+        <li *ngFor="let item of cartProductList">
+            {{item.name}}
+            <button (click)="removeFromCartProduct(item)" class="btn btn-primary" *ngIf="item.addedToCart">x</button>
+        </li>
+    </ul>
+    <span *ngIf="cartProductList.length===0">Cart is empty.</span>
+</div>

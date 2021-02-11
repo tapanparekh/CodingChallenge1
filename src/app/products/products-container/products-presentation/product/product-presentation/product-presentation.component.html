@@ -7,7 +7,7 @@
         <img class="card-img-top img-size" src="{{product.image}}" alt="image">
     </div>
     <div class="card-body">
-        <p class="card-text">{{product.desc}}</p>
+        <p class="card-text prod-des">{{product.desc}}</p>
         <button (click)="addToCartProduct()" class="btn btn-primary" *ngIf="!product.addedToCart">Add to cart</button>
         <button (click)="removeFromCartProduct()" class="btn btn-primary" *ngIf="product.addedToCart">Remove from
             cart</button>
